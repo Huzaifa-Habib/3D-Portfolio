@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/dev/**)",
+      "Bash(npm create *)",
+      "Bash(npm -v)",
+      "Bash(npm install *)",
+      "Bash(node -e \"const p=require\\('./package.json'\\);console.log\\(JSON.stringify\\({...p.dependencies,...p.devDependencies},null,2\\)\\)\")",
+      "Bash(node -p \"require\\('./node_modules/lenis/package.json'\\).version\")",
+      "Bash(node -p \"Object.keys\\({...require\\('./package.json'\\).dependencies,...require\\('./package.json'\\).devDependencies}\\).join\\('\\\\n'\\)\")",
+      "Bash([ -f \"$f\" ])",
+      "Bash(npm run *)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_wait_for",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4173/)",
+      "mcp__playwright__browser_close"
+    ]
+  }
+}

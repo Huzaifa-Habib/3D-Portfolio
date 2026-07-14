@@ -1,0 +1,117 @@
+/* ============================================================
+   Reset + design tokens + base typography
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+:root {
+  /* Palette */
+  --bg: #05060a;
+  --bg-elev: #0c0e16;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-2: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --text: #e9ecf4;
+  --text-dim: #a6adbb;
+  --text-faint: #6b7280;
+  --accent: #5b8cff;
+  --accent-2: #22d3b7;
+  --accent-3: #f59e0b;
+
+  /* Type scale (fluid) */
+  --step--1: clamp(0.83rem, 0.78rem + 0.2vw, 0.95rem);
+  --step-0: clamp(1rem, 0.94rem + 0.28vw, 1.15rem);
+  --step-1: clamp(1.25rem, 1.1rem + 0.7vw, 1.6rem);
+  --step-2: clamp(1.6rem, 1.3rem + 1.4vw, 2.4rem);
+  --step-3: clamp(2.1rem, 1.5rem + 3vw, 4rem);
+  --step-4: clamp(2.6rem, 1.6rem + 5vw, 5.5rem);
+
+  /* Spacing + layout */
+  --gutter: clamp(1.25rem, 0.8rem + 3vw, 4rem);
+  --maxw: 1200px;
+  --radius: 16px;
+  --radius-lg: 24px;
+
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-dim);
+  font-size: var(--step-0);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--text);
+}
+
+img,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Visible focus for keyboard users everywhere. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Honor reduced-motion at the platform level too. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
